@@ -58,7 +58,7 @@ func (key *Key) ToBytes() ([]byte, error) {
 	}
 
 	pubBytes := pem.EncodeToMemory(&pem.Block{
-		Type:  "RSA PUBLIC KEY",
+		Type:  "PUBLIC KEY",
 		Bytes: pubASN1,
 	})
 
