@@ -36,7 +36,7 @@ func TestKeyToRSA(t *testing.T) {
 	pathToSave := os.Getenv("JWT_FILE_PATH")
 	for index, key := range configs.Keys {
 		pemKey, _ := key.ToBytes()
-		path := fmt.Sprintf(pathToSave, "upowl_cognito/"+key.Kid)
+		path := fmt.Sprintf(pathToSave, key.Kid)
 		log.Printf("Key %d: %s\n", index, path)
 		if err := ioutil.WriteFile(path, pemKey, 0644); err != nil {
 			log.Println("Error save file: ", err)
